@@ -1,0 +1,195 @@
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+.message-input #myMessage, .rooms .room-input #newRoom {
+  padding: 0.5rem;
+  width: 100%;
+  height: 2rem;
+  border: 1px solid #242424;
+  border-radius: 1rem;
+  outline: none;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: auto;
+  min-width: 500px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-section {
+  padding: 2rem;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.channels {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0;
+  border-radius: 20px;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.message-area {
+  -webkit-box-flex: 2;
+      -ms-flex: 2 1 0px;
+          flex: 2 1 0;
+  border-radius: 20px;
+}
+
+#greetings {
+  text-align: center;
+  margin-top: 1.2rem;
+}
+
+#roomTitle {
+  font-family: "Permanent Marker", cursive;
+}
+
+#displayMessages {
+  overflow-y: scroll;
+  border-radius: 1rem;
+  padding: 1rem;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+  height: calc(100vh - 300px);
+}
+
+#displayMessages #messages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#displayMessages #messages .message {
+  padding: 1rem;
+}
+
+#displayMessages #messages .message .time {
+  font-size: 0.7rem;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1.2rem;
+  color: #8f8f8f;
+}
+
+#displayMessages #messages .message .user {
+  font-weight: bold;
+  padding: 3px;
+  display: inline;
+}
+
+#displayMessages #messages .message .text {
+  background-image: linear-gradient(45deg, #d1ecec 0%, #f3d3e2 100%);
+  display: inline;
+  border-radius: 0.8rem;
+  height: 1.5rem;
+  padding: 10px;
+  width: 100%;
+}
+
+.message-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.message-input #sendButton {
+  font-size: 1.8rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+.message-input #sendButton:active {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.rooms .room-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.rooms .room-input #newRoom {
+  display: inline;
+}
+
+.rooms .room-input #createRoom {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  display: inline;
+  font-size: 1.3rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.rooms .room-input #createRoom:active, .rooms .room-input #createRoom:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.rooms #roomList {
+  height: 100%;
+  width: 200px;
+  -webkit-padding-start: 0px;
+          padding-inline-start: 0px;
+}
+
+.rooms #roomList .select-room {
+  font-family: "Permanent Marker", cursive;
+  font-size: 1.2rem;
+  line-height: 1.1rem;
+  cursor: pointer;
+  list-style: none;
+  padding: 5px;
+  text-transform: capitalize;
+}
+
+.rooms #roomList .select-room::before {
+  content: "#";
+}
+
+.rooms #roomList .select-room:hover {
+  font-weight: bold;
+}
+
+.rooms #roomList .select-room:hover::before {
+  content: "> ";
+}
+/*# sourceMappingURL=style.css.map */
