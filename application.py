@@ -27,8 +27,8 @@ def index():
 
 # on client connection
 @socketio.on("connect")
-def test_connect():
-    print(request.sid)
+def connect():
+    print("connected!")
 
 
 # generating random username
@@ -66,10 +66,9 @@ def handle_message(data, room):
 def on_join(data):
     selected_room = data.get('room')
     join_room(selected_room)
-    current_room = selected_room
 
     try:
-        previous_messages = list(messages[current_room])
+        previous_messages = list(messages[selected_room])
         emit("receive previous messages", previous_messages)
     except KeyError:
         print("The list is empty")
@@ -79,8 +78,8 @@ def on_join(data):
 def on_leave(data):
 
     leave_room(data['room'])
-    send(data['user'] + " has left the " +
-         data['room'] + ' room.', room=data['room'])
+    # send(data['user'] + " has left the " +
+    #      data['room'] + ' room.', room=data['room'])
 
 # create rooms
 @socketio.on('create room')

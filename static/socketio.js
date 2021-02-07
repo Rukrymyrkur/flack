@@ -6,7 +6,7 @@ $(document).ready(function () {
 
   // // greet user once data is stored in localStorage
   if (localStorage.getItem("user")) {
-    document.querySelector("#greetings").innerHTML = "hello, " + user + "!";
+    $("#greetings").html("hello " + user + "!");
   }
   // when the client connects
   socket.on("connect", () => {
@@ -29,7 +29,12 @@ $(document).ready(function () {
     // store username in localStorage
     localStorage.setItem("user", JSON.stringify(user));
     // close modal
-    document.getElementById("closeModal").click();
+    $("#closeModal").click();
+  });
+
+  //   greet user when created new user
+  $("#closeModal").on("click", function () {
+    $("#greetings").html("hello " + user + "!");
   });
 
   function login() {
@@ -56,7 +61,7 @@ $(document).ready(function () {
         .addEventListener("keyup", function (e) {
           if (e.keyCode === 13) {
             e.preventDefault();
-            document.getElementById("modalButton").click();
+            $("#modalButton").click();
           }
         });
 
