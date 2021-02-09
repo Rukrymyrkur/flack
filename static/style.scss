@@ -56,7 +56,8 @@ body {
   //   max-height: 600px;
   #messages {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+    // man atrodo reik flex reverse padaryt?
     .message {
       padding: 1rem;
       .time {

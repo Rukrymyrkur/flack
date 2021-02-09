@@ -57,7 +57,8 @@ def new_user(data):
 def handle_message(data, room):
     room = data['room']
     # store data in message deque
-    messages[room].append(data)
+    messages[room].appendleft(data)
+    print(messages)
     # bounce message back to the client
     emit("return message", data, room=data['room'], broadcast=True)
 

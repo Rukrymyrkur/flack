@@ -123,7 +123,8 @@ $(document).ready(function () {
   //   when server sends messages
   socket.on("return message", (data) => {
     //   create all messages data (that user has sent)
-    createMessage(data);
+    inbound = true;
+    createMessage(data, inbound);
     // scroll to bottom
     scrollWindow();
   });
@@ -147,7 +148,8 @@ $(document).ready(function () {
     for (var msgs in previous_messages) {
       var obj = previous_messages[msgs];
       console.log(obj["msg"]);
-      createMessage(obj);
+      inbound = false;
+      createMessage(obj, inbound);
     }
     // scroll to bottom
     scrollWindow();
@@ -189,7 +191,7 @@ $(document).ready(function () {
   }
 
   //   function for creating messages on the window
-  function createMessage(data) {
+  function createMessage(data, inbound) {
     const messageContainer = document.createElement("div");
     messageContainer.classList.add("message");
     const span = document.createElement("span");
@@ -206,7 +208,12 @@ $(document).ready(function () {
     messageContainer.append(username);
     messageContainer.append(text);
 
-    document.getElementById("messages").append(messageContainer);
+    // add messages to screen depending whether the user sends or gets
+    if (inbound) {
+      document.getElementById("messages").append(messageContainer);
+    } else {
+      document.getElementById("messages").prepend(messageContainer);
+    }
   }
   //   function for scrolling window down when displaying messages
   function scrollWindow() {
